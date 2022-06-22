@@ -1,10 +1,9 @@
-import { MainArea } from 'components';
 import * as S from './style';
 
-export function Main() {
+export function ImageBox() {
   return (
     <S.Container>
-      <MainArea />
+      <h1>ImageBox</h1>
     </S.Container>
   );
 }

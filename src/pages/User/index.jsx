@@ -1,10 +1,10 @@
-import { UserComponent } from 'components';
+import { Outlet } from 'react-router-dom';
 import * as S from './style';
 
 export function User() {
   return (
     <S.Container>
-      <UserComponent />
+      <Outlet />
     </S.Container>
   );
 }
