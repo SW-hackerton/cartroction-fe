@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   width: 80%;
   height: 80%;
   margin: auto;
-
+  justify-content: space-between;
   @media (max-width: ${responseSize}px) {
     width: 100%;
     flex-direction: column;
@@ -36,10 +36,9 @@ export const InputWrapper = styled.div`
 
 export const EstimateImg = styled.div`
   display: flex;
-  width: 40%;
+  width: 45%;
   max-height: 700px;
   height: 100%;
-  margin: auto;
   background: #d9d9d9;
 
   @media (max-width: ${responseSize}px) {
