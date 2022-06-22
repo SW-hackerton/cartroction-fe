@@ -1,11 +1,10 @@
-import { Main, Manager, User } from 'pages';
+import { StrictMode } from 'react';
+import Router from 'router';
 
 export default function App() {
   return (
-    <>
-      <Main />
-      <Manager />
-      <User />
-    </>
+    <StrictMode>
+      <Router />
+    </StrictMode>
   );
 }
