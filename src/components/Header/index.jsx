@@ -1,6 +1,7 @@
 import * as S from './style';
 
-export function Header({ showSearchBar }) {
+export function Header({ showSearchBar, hidden }) {
+  if (hidden) return;
   return (
     <S.Container>
       <S.Wrapper>
