@@ -1,5 +1,12 @@
+import { MainArea, Layout } from 'components';
 import * as S from './style';
 
 export function Main() {
-  return <S.Container>Main</S.Container>;
+  return (
+    <Layout>
+      <S.Container>
+        <MainArea />
+      </S.Container>
+    </Layout>
+  );
 }
