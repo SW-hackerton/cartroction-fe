@@ -1,5 +1,10 @@
+import { ManagerComponent } from 'components';
 import * as S from './style';
 
 export function Manager() {
-  return <S.Container>Manager</S.Container>;
+  return (
+    <S.Container>
+      <ManagerComponent />
+    </S.Container>
+  );
 }
