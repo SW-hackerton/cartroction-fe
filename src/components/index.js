@@ -4,8 +4,9 @@ export { Footer } from 'components/Footer';
 export { Header } from 'components/Header';
 export { Button } from 'components/Button';
 
-// Main
-export { MainArea } from 'components/Main/MainArea';
+//Login
+export { Login } from 'components/Login/Login';
+export { Welcome } from 'components/Login/Welcome';
 
 // User
 export { ManagerComponent } from 'components/Manager/ManagerComponent';
