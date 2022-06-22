@@ -1,10 +1,9 @@
-import { Outlet } from 'react-router-dom';
 import * as S from './style';
 
-export function User() {
+export function ImageBox() {
   return (
     <S.Container>
-      <Outlet />
+      <h1>ImageBox</h1>
     </S.Container>
   );
 }

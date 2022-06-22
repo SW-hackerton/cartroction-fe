@@ -1,3 +1,4 @@
+import { MainArea } from 'components';
 import * as S from './style';
 
 export function Main() {

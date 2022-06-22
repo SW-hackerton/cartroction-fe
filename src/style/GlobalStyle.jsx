@@ -8,7 +8,20 @@ export const GlobalStyle = createGlobalStyle`
     }
     body {
         font-family: 'Noto Sans KR', sans-serif;
+        height: 100%;
     }
+
+    #root {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+
+     a {color: #fff; text-decoration: none; outline: none}
+     a:hover, a:active {text-decoration: none; background-color: transparent;}
+
     
     input:-webkit-autofill,
     input:-webkit-autofill:hover, 
