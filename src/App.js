@@ -1,10 +1,11 @@
-import { Footer, Header } from 'components';
+import { Main, Manager, User } from 'pages';
 
 export default function App() {
   return (
     <>
-      <Header />
-      <Footer />
+      <Main />
+      <Manager />
+      <User />
     </>
   );
 }
