@@ -1,4 +1,5 @@
 // common
+export { Layout } from 'components/Layout';
 export { Footer } from 'components/Footer';
 export { Header } from 'components/Header';
 
