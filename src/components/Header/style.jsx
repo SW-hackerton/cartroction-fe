@@ -14,7 +14,7 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
-  width: 80%;
+  width: 90%;
 `;
 
 export const SearchBarWrapper = styled.div`
@@ -32,6 +32,14 @@ export const WireBox = styled.div`
   width: 10%;
   ${getContentHeight()};
   ${getContentMargin()};
+  background: #c4c4c4;
+`;
+
+export const UserBox = styled.div`
+  min-width: 50px;
+  width: 10%;
+  ${getContentHeight()};
+  margin: auto 0;
   background: #c4c4c4;
 `;
 

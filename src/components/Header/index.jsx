@@ -13,7 +13,7 @@ export function Header({ showSearchBar, hidden }) {
         )}
         <S.UserInfoWrapper>
           <S.WireBox></S.WireBox>
-          <S.WireBox></S.WireBox>
+          <S.UserBox></S.UserBox>
         </S.UserInfoWrapper>
       </S.Wrapper>
     </S.Container>

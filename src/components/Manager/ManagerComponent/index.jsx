@@ -16,7 +16,7 @@ export function ManagerComponent() {
   return (
     <S.Container>
       <S.Wrapper>
-        <S.EstimateImg></S.EstimateImg>
+        <S.EstimateImg />
         <S.InputWrapper>
           <S.InputBox>
             <S.Content>
