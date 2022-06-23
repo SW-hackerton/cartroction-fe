@@ -20,12 +20,24 @@ export const Container = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
   min-width: 320px;
+  width: 100%;
+  height: 100%;
+
+  justify-content: center;
+  align-items: center;
+`;
+
+export const SearchBoxWrap = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: row;
   width: 44%;
   height: ${searchHeight}px;
-  position: relative;
   justify-content: space-around;
 `;
+
 
 export const SearchBox = styled.input`
   display: flex;
@@ -37,7 +49,6 @@ export const SearchBox = styled.input`
   box-shadow: 0px 5px 20px rgba(174, 174, 192, 0.6);
   border-radius: 46.5px;
   padding-left: calc(${searchIconSize}px * 2 + 5px);
-  font-size: 18px;
   border: 0;
   outline: none;
   font-weight: 400;
@@ -57,4 +68,15 @@ export const SearchBox__icon = styled.div`
   background: url(${icon});
   background-size: contain;
   background-repeat : no-repeat;
+`;
+
+export const SubText = styled.label`
+  display: flex;
+  font-weight: 400;
+  font-size: 1.6vw;
+  line-height: 27px;
+  text-align: center;
+  color: #BBBBC1;
+
+  margin-top: 35px;
 `;
