@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import background from 'image/home1.png';
 import icon from 'image/icon/search.svg';
 
+const responseSize = 768;
 const searchHeight = 65;
 const searchIconSize = 30;
 
@@ -36,6 +37,10 @@ export const SearchBoxWrap = styled.div`
   width: 44%;
   height: ${searchHeight}px;
   justify-content: space-around;
+
+  @media (max-width: ${responseSize}px) {
+    width: 80%;
+  }
 `;
 
 
@@ -54,6 +59,10 @@ export const SearchBox = styled.input`
   font-weight: 400;
   font-size: 2vw;
   color: #8B8B8B;
+
+  @media (max-width: ${responseSize}px) {
+    font-size: 18px;
+  }
 `;
 
 export const SearchBox__icon = styled.div`
@@ -62,7 +71,7 @@ export const SearchBox__icon = styled.div`
   width: ${searchIconSize}px;
   height: ${searchIconSize}px;
   top: calc(${searchHeight / 2}px - ${searchIconSize / 2}px);
-  margin-left: 3%;
+  margin-left: 3.5%;
   border-radius: 20px;
 
   background: url(${icon});
@@ -79,4 +88,8 @@ export const SubText = styled.label`
   color: #BBBBC1;
 
   margin-top: 35px;
+
+  @media (max-width: ${responseSize}px) {
+    font-size: 15px;
+  }
 `;
