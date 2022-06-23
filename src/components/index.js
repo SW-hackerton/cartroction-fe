@@ -7,6 +7,7 @@ export { NavTemplate } from 'components/NavTemplate';
 // Main
 export { TimeLine } from 'components/Main/TimeLine';
 export { TimeLineList } from 'components/Main/TimeLineList';
+export { Dashboard } from 'components/Main/Dashboard';
 
 //Login
 export { Login } from 'components/Login/Login';

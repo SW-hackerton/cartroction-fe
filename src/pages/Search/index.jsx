@@ -180,7 +180,7 @@ export function Search() {
             />
             <S.SearchBox__icon></S.SearchBox__icon>
           </S.SearchBoxWrap>
-          <S.SubText>해당 차량의 연대기 입니다.</S.SubText>
+          {/* <S.SubText>해당 차량의 연대기 입니다.</S.SubText> */}
           <Outlet context={[data]} />
         </S.Wrapper>
       </S.Container>
