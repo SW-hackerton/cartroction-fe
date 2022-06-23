@@ -124,8 +124,10 @@ export function ManagerComponent() {
     };
 
     const res = await api.submitForm({ data });
-
-    console.log(res);
+    if (res === 'success') alert('제출 성공');
+    
+    setEstimateData({});
+    setRepairList([]);
   };
 
   return (
