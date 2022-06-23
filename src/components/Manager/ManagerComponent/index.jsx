@@ -7,6 +7,7 @@ export function ManagerComponent() {
     '타이어 교체',
     '기타 오일 교체',
     '사고 수리',
+    '침수 수리',
     '일반 수리',
     '차량 점검',
     '기타',
