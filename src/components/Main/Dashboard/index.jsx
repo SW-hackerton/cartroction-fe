@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
+import { api } from 'utils/api';
 import * as S from './style';
 
-export function Dashboard({ data, page, idx }) {
+export function Dashboard(props) {
+  const { search } = useOutletContext();
+  const [data, setData] = useState('');
+
   const mobileSize = 768;
   const rowContentCnt = 4;
   const mobileContentCnt = 2;
 
-  const dashboardList = [
+  const [dashboardList, setDashboardList] = useState([
     {
       title: '타이어 교체',
       contents: [
@@ -99,9 +104,45 @@ export function Dashboard({ data, page, idx }) {
       title: '',
       contents: []
     },
-  ];
+  ]);
 
   const [isMobile, setIsMobile] = useState(false);
+
+  const callApi = async () => {
+    const _data = await api.getDashboard({ param: search });
+    setData(_data);
+    mappingDashboard(_data);
+  }
+
+  const mappingDashboard = (data) => {
+    const { dashboardList: dl } = data;
+    
+    dashboardList[0].contents[0].value = dl.tire.replacementCycle;
+    dashboardList[0].contents[1].value = dl.tire.count;
+    
+    dashboardList[1].contents[0].value = dl.engineOil.replacementCycle;
+    dashboardList[1].contents[1].value = dl.engineOil.count;
+    
+    dashboardList[2].contents[0].key = dl.flooding.isFlooding ? '있음' : '없음';
+    
+    dashboardList[3].contents[0].value = dl.normalRepair.totalRepairPrice;
+    dashboardList[3].contents[1].value = dl.normalRepair.count;
+    
+    dashboardList[4].contents[0].value = dl.accidentRepair.totalRepairPrice;
+    dashboardList[4].contents[1].value = dl.accidentRepair.count;
+    
+    dashboardList[5].contents[0].value = dl.inspection.replacementCycle;
+    dashboardList[5].contents[1].value = dl.inspection.count;
+    
+    dashboardList[6].contents[0].value = dl.carDistancePerMonth;
+
+    setDashboardList([...dashboardList]);
+  }
+
+  useEffect(() => {
+    callApi();
+    return;
+  }, []);
 
   const resizingHandler = () => {
     if (window.innerWidth <= mobileSize) setIsMobile(true);

@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 import background from 'image/home2.png';
+import mBackground from 'image/m_home.png';
 import icon from 'image/icon/arrow_white.svg';
 import { Link } from 'react-router-dom';
 
-const responseSmallSize = 600;
+const responseSmallSize = 400;
 const responseMedianSize = 1000;
-const responseBigSize = 1400;
+const responseBigSize = 139
 
 export const Container = styled.div`
   display: flex;
@@ -19,6 +20,12 @@ export const Container = styled.div`
 
   @media (min-width: ${responseBigSize}px) {
     background-size: cover;
+  }
+
+  @media (max-width: ${responseSmallSize}px) {
+    background: url(${mBackground});
+    background-size: contain;
+    background-repeat : no-repeat;
   }
 `;
 
@@ -43,6 +50,12 @@ export const MiddleText = styled.label`
   font-weight: 700;
   color: #5a5a5a;
   margin-bottom: 12px;
+  
+  @media (max-width: ${responseSmallSize}px) {
+    width: 90%;
+    line-height: 45px;
+    font-size: 20px;
+  }
 `;
 
 export const PintText = styled.label`
@@ -50,6 +63,12 @@ export const PintText = styled.label`
   font-weight: 700;
   color: #5A5A5A;
   margin: 3vh 0;
+
+  @media (max-width: ${responseSmallSize}px) {
+    width: 90%;
+    line-height: 45px;
+    font-size: 32px;
+  }
 `;
 
 export const GoBtn = styled(Link)`
@@ -77,9 +96,6 @@ export const GoBtn = styled(Link)`
     margin-right: -1vw;
   }
 
-  @media (max-width: ${responseSmallSize}px) {
-    width: 120px;
-  }
   @media (max-width: ${responseMedianSize}px) {
     width: 150px;
     line-height: 26px;
@@ -88,5 +104,10 @@ export const GoBtn = styled(Link)`
       width: 10px;
       height: 10px;
     }
+  }
+  @media (max-width: ${responseSmallSize}px) {
+    width: 90%;
+    line-height: 45px;
+    font-size: 16px;
   }
 `;
