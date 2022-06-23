@@ -9,20 +9,19 @@ import * as S from './style';
 export function Login() {
   const dispatch = useDispatch();
 
-  const onClick = ({ target }) => {
-    if (target.text === '정비사') dispatch(setUserType(1));
-    if (target.text === '차량 구매') dispatch(setUserType(0));
+  const onClick = (type) => {
+    return () => dispatch(setUserType(type));
   };
   return (
-    <S.Container onClick={onClick} background={login}>
-      <Button text="차량 구매" link="/welcome">
-        <span>
+    <S.Container background={login}>
+      <Button link="/welcome">
+        <span onClick={onClick(0)}>
           <img src={userLogin} alt="user login img" />
           <p>사용자</p>
         </span>
       </Button>
-      <Button text="정비사" link="/welcome">
-        <span>
+      <Button link="/welcome">
+        <span onClick={onClick(1)}>
           <img src={managerLogin} alt="user login img" />
           <p>정비사</p>
         </span>
