@@ -1,15 +1,15 @@
 import { StrictMode } from 'react';
 import Router from 'router';
 import Providers from 'providers';
-import { Layout } from 'components';
+import * as S from 'App.style';
 
 export default function App() {
   return (
     <StrictMode>
       <Providers>
-        <Layout>
+        <S.AppContainer>
           <Router />
-        </Layout>
+        </S.AppContainer>
       </Providers>
     </StrictMode>
   );

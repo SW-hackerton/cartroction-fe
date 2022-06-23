@@ -1,5 +1,4 @@
 // common
-export { Layout } from 'components/Layout';
 export { Footer } from 'components/Footer';
 export { Header } from 'components/Header';
 export { Button } from 'components/Button';
@@ -22,4 +21,4 @@ export { ImageList } from 'components/CarResult/ImageList';
 export { InfoBox } from 'components/CarResult/InfoBox';
 
 // Manager
-export { UserComponent } from 'components/User/UserComponent';
+// export { UserComponent } from 'components/User/UserComponent';
