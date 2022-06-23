@@ -71,6 +71,8 @@ export const SubmitBtn = styled.button`
   font-weight: 800;
   font-size: 24px;
   color: #ffffff;
+
+  cursor: pointer;
 `;
 
 export const EstimateBox = styled.div`
