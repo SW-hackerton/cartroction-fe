@@ -128,6 +128,7 @@ export function ManagerComponent() {
     
     setEstimateData({});
     setRepairList([]);
+    setFiles(null);
   };
 
   return (
