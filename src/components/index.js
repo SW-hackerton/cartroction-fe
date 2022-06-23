@@ -4,6 +4,10 @@ export { Footer } from 'components/Footer';
 export { Header } from 'components/Header';
 export { Button } from 'components/Button';
 
+// Main
+export { TimeLine } from 'components/Main/TimeLine';
+export { TimeLineList } from 'components/Main/TimeLineList';
+
 //Login
 export { Login } from 'components/Login/Login';
 export { Welcome } from 'components/Login/Welcome';

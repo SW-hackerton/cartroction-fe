@@ -1,4 +1,4 @@
-import { MainArea } from 'components';
+import { TimeLineList } from 'components';
 import * as S from './style';
 
 export function Main() {
@@ -8,6 +8,7 @@ export function Main() {
         <S.WireSearchBox />
         <S.WireSearchBox__icon />
       </S.Wrapper>
+      <TimeLineList />
     </S.Container>
   );
 }
