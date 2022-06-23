@@ -1,13 +1,26 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
-  height: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  padding: 80px 0px;
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 
-  @media (max-width: 1286px) {
+  overflow: auto;
+  @media (max-width: 1227px) {
     flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
   }
+`;
+
+export const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
