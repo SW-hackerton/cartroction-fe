@@ -1,11 +1,12 @@
 import * as S from './style';
 
 export function TimeLine({ data, page, idx, length }) {
-  console.log(idx, page);
-
   return (
     <S.Container>
-      <S.Image />
+      <S.Image>
+        <img src={data.src} alt={data.name} />
+        <p>{data.name}</p>
+      </S.Image>
       {idx % page !== 0 && idx !== length && <S.Line length={length} />}
     </S.Container>
   );

@@ -26,7 +26,21 @@ export const Line = styled.div`
 export const Image = styled.div`
   width: 160px;
   height: 160px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   z-index: 1;
+
+  background: #fcfcfc;
+
+  box-shadow: inset 0px 4px 12px rgba(174, 174, 192, 0.7);
+
+  color: #bbbbc1;
   border-radius: 50%;
-  background: #d9d9d9;
+
+  img {
+    margin-bottom: 0.5rem;
+  }
 `;
