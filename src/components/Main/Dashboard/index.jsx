@@ -160,7 +160,7 @@ export function Dashboard(props) {
   const mkContent = ({ key, value, unit }, idx) => {
     return (
       <S.DscBox key={idx}>
-        <S.DscBold>{key}</S.DscBold>
+        <S.DscBold>{key} </S.DscBold>
         <S.DscNormal>{value} {unit}</S.DscNormal>
       </S.DscBox>
     )
