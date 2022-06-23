@@ -1,10 +1,10 @@
-import { Outlet } from 'react-router-dom';
+import { NavTemplate } from 'components';
 import * as S from './style';
 
 export function User() {
   return (
-    <S.Container>
-      <Outlet />
-    </S.Container>
+    <NavTemplate isSearchBar={true}>
+      <S.Container>User</S.Container>
+    </NavTemplate>
   );
 }

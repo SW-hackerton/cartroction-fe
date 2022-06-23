@@ -1,11 +1,10 @@
 import * as S from './style';
 
-export function Header({ showSearchBar, hidden }) {
-  if (hidden) return;
+export function Header({ isSearchBar }) {
   return (
     <S.Container>
       <S.Wrapper>
-        {showSearchBar && (
+        {isSearchBar && (
           <S.SearchBarWrapper>
             <S.WireBox></S.WireBox>
             <S.WireSearchBox></S.WireSearchBox>

@@ -2,6 +2,7 @@
 export { Footer } from 'components/Footer';
 export { Header } from 'components/Header';
 export { Button } from 'components/Button';
+export { NavTemplate } from 'components/NavTemplate';
 
 // Main
 export { TimeLine } from 'components/Main/TimeLine';
