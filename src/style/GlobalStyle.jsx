@@ -11,6 +11,19 @@ export const GlobalStyle = createGlobalStyle`
         height: 100%;
     }
 
+    .slick-list {
+        display: absolute;
+        width: 700px;
+	  right: -90px;
+    }
+
+    .slick-dots {
+        display: absolute;
+        left: 43px;
+
+    }
+
+
 
      a {color: #fff; text-decoration: none; outline: none}
      a:hover, a:active {text-decoration: none; background-color: transparent;}

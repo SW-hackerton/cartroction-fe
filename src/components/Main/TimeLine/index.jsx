@@ -1,21 +1,11 @@
 import * as S from './style';
 
-export function TimeLine({ data, length, idx }) {
-  const { date, repair_list } = data;
+export function TimeLine({ data, page, idx }) {
   return (
     <S.Container>
       <S.Image />
 
-      <p className="time">{date}</p>
-      {Object.keys(repair_list).map(key => (
-        <div className="repair_list" key={key}>
-          <p>
-            {key}: {repair_list[key]}
-          </p>
-        </div>
-      ))}
-
-      {idx + 1 !== length && <S.Line length={length} />}
+      {idx % page !== 0 && <S.Line />}
     </S.Container>
   );
 }

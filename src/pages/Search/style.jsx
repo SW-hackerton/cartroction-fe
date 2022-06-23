@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import background from 'image/home1.png';
 import icon from 'image/icon/search.svg';
 
 const responseSize = 768;
@@ -11,10 +10,7 @@ export const Container = styled.div`
   width: 100%;
   height: 100%;
 
-  background: url(${background});
-  background-size: contain;
-  background-repeat : no-repeat;
-  
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -43,14 +39,13 @@ export const SearchBoxWrap = styled.div`
   }
 `;
 
-
 export const SearchBox = styled.input`
   display: flex;
   min-width: 300px;
   width: 100%;
   height: 100%;
   margin: auto;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 5px 20px rgba(174, 174, 192, 0.6);
   border-radius: 46.5px;
   padding-left: calc(${searchIconSize}px * 2 + 5px);
@@ -58,7 +53,7 @@ export const SearchBox = styled.input`
   outline: none;
   font-weight: 400;
   font-size: 2vw;
-  color: #8B8B8B;
+  color: #8b8b8b;
 
   @media (max-width: ${responseSize}px) {
     font-size: 18px;
@@ -76,7 +71,7 @@ export const SearchBox__icon = styled.div`
 
   background: url(${icon});
   background-size: contain;
-  background-repeat : no-repeat;
+  background-repeat: no-repeat;
 `;
 
 export const SubText = styled.label`
@@ -85,7 +80,7 @@ export const SubText = styled.label`
   font-size: 1.6vw;
   line-height: 27px;
   text-align: center;
-  color: #BBBBC1;
+  color: #bbbbc1;
 
   margin-top: 35px;
 
