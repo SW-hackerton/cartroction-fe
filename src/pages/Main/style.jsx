@@ -3,6 +3,7 @@ import background from 'image/home2.png';
 import icon from 'image/icon/arrow_white.svg';
 import { Link } from 'react-router-dom';
 
+const responseBigSize = 1400;
 
 export const Container = styled.div`
   display: flex;
@@ -13,6 +14,10 @@ export const Container = styled.div`
   background-size: contain;
   background-repeat : no-repeat;
   flex-direction: column;
+
+  @media (min-width: ${responseBigSize}px) {
+    background-size: cover;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -47,8 +52,8 @@ export const PintText = styled.label`
 
 export const GoBtn = styled(Link)`
   display: flex;
-  width: 20vw;
-  line-height: 50px;
+  width: min(300px, 20vw);
+  line-height: min(60px, 4vw);
   background: linear-gradient(270.15deg, #0087FF 4.66%, #00C3FF 100.81%);
   color: white;
   margin-top: 30px;
