@@ -6,7 +6,7 @@ export function TimeLine({ data, page, idx, length }) {
   return (
     <S.Container>
       <S.Image />
-      {idx % page !== 0 && <S.Line length={length} />}
+      {idx % page !== 0 && idx !== length && <S.Line length={length} />}
     </S.Container>
   );
 }

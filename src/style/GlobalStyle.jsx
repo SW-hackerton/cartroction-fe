@@ -14,30 +14,24 @@ export const GlobalStyle = createGlobalStyle`
     .slick-list {
         display: absolute;
         width: 1100px;
-	    right: 145px;
+	    right: 130px;
     }
-
     .slick-dots {
         display: absolute;
         left: 10px;
-
     }
-
     .slick-next.slick-arrow {
         position: absolute;
         right: -150px;
     }
-
     .slick-prev.slick-arrow {
         position: absolute;
         top: 105px;
         left: -230px;
     }
-
     .slick-next.slick-arrow:before {
         display: none;
     }
-
     li.slick-active button {
         opacity: .75;
         color: red;
@@ -66,31 +60,24 @@ export const GlobalStyle = createGlobalStyle`
         white-space: nowrap;
         width: 1px;
     }
-
     .test-css {
         position: absolute;
         bottom: -40px;
         left: 380px;
     }
-
     .test-css li {
         display: inline-block;
     }
-
     .test-css li button {
         font-size: 0;
         width: 15px;
         height: 15px;
-
         margin: 0 5px;
-
         border: 0;
         outline: 0;
-
         border-radius: 50%;
         background: #DBDBE1;
     }
-
     .test-css .slick-active button{
         width: 32px;
         height: 15px;
@@ -100,7 +87,6 @@ export const GlobalStyle = createGlobalStyle`
         border-bottom-right-radius: 30px;
         background: #B1B1B8;
     }
-
     .test-css li button:before {
         font-size: 2.7rem;
         line-height: 20px;
@@ -115,28 +101,7 @@ export const GlobalStyle = createGlobalStyle`
         opacity: .75;
         color: #B1B1B8;
     }
-
     .test-css li.slick-active button:before {
         color: #B1B1B8;
-    }
-
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    td, th {
-        border-top: 1px solid #dddddd;
-        border-bottom: 1px solid #dddddd;
-        text-align: center;
-        padding: 8px;
-    }
-    td:not(:last-child), th:not(:last-child) {
-        border-right: 1px solid #dddddd;
-    }
-
-    th {
-        font-weight: bold;
     }
 `;

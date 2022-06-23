@@ -36,21 +36,15 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
 export function TimeLineList() {
   const [data] = useOutletContext();
 
-  const len = data.length;
-
-  const slidesToShow = len < 5 ? len : 5;
-  const slidesToScroll = len < 5 ? 1 : 5;
-
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow,
-    slidesToScroll,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
   };
-
   return (
     <S.Container>
       <Slider {...settings} dotsClass="test-css">
@@ -58,8 +52,8 @@ export function TimeLineList() {
           <TimeLine
             key={data.registration_form_id}
             data={data}
-            length={len}
-            page={len >= 5 ? 5 : len}
+            length={data.length}
+            page={5}
             idx={idx + 1}
           />
         ))}
