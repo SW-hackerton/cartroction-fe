@@ -5,16 +5,17 @@ const responseSize = 768;
 const boardSize = {
   width: 17,
   height: 10,
-}
+};
 
 export const Container = styled.div`
   position: relative;
   display: flex;
 
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 4rem;
-  
+
   @media (max-width: ${responseSize}px) {
     margin-top: 1rem;
   }
@@ -41,7 +42,7 @@ export const BoardBox = styled.div`
   flex-direction: column;
   width: ${boardSize.width}vw;
   height: ${boardSize.height}vw;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 5px 20px rgba(174, 174, 192, 0.6);
   border-radius: 20px;
   padding: 0 2%;
@@ -62,7 +63,7 @@ export const BoardBox = styled.div`
 `;
 export const BoardTitle = styled.div`
   display: flex;
-  color: #0087FF;
+  color: #0087ff;
   font-size: 2vw;
   font-weight: 800;
   line-height: ${boardSize.height / 2}vw;

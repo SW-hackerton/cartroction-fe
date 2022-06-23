@@ -1,8 +1,16 @@
 import { TimeLine } from 'components';
 import { useOutletContext } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import prev from 'image/icon/prev.svg';
 import next from 'image/icon/next.svg';
+import tire from 'image/icon/tire.svg';
+import inspection from 'image/icon/inspection.svg';
+import normal from 'image/icon/normal.svg';
+import crash from 'image/icon/crash.svg';
+import enginOil from 'image/icon/enginOil.svg';
+import etcOil from 'image/icon/etcOil.svg';
+import ect from 'image/icon/ect.svg';
 import * as S from './style';
 
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
@@ -33,33 +41,64 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   </button>
 );
 
-export function TimeLineList() {
-  const [data] = useOutletContext();
+export function TimeLineList({ info }) {
+  // const [data] = useOutletContext();
 
-  const len = data.length;
+  const datas = [
+    { id: 0, src: tire, name: '타이어 교체' },
+    { id: 1, src: inspection, name: '차량 점검' },
+    {
+      id: 2,
+      src: crash,
+      name: '사고 수리',
+    },
+    {
+      id: 3,
+      src: normal,
+      name: '일반 수리',
+    },
+    {
+      id: 4,
+      src: enginOil,
+      name: '엔진 오일 교체',
+    },
+    {
+      id: 5,
+      src: etcOil,
+      name: '기타 오일 교체',
+    },
+    {
+      id: 6,
+      src: ect,
+      name: '기타',
+    },
+  ];
 
-  const slidesToShow = len < 5 ? len : 5;
-  const slidesToScroll = len < 5 ? 1 : 5;
+  const navigate = useNavigate();
+
+  const onClick = id => {
+    navigate('/result', { state: { info: info[id], img: datas[id].src } });
+  };
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow,
-    slidesToScroll,
+    slidesToShow: 5,
+    slidesToScroll: 5,
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
   };
-
   return (
     <S.Container>
       <Slider {...settings} dotsClass="test-css">
-        {data.map((data, idx) => (
+        {datas.map((data, idx) => (
           <TimeLine
-            key={data.registration_form_id}
+            key={data.id}
+            onClick={() => onClick(data.id)}
             data={data}
-            length={len}
-            page={len >= 5 ? 5 : len}
+            length={data.length}
+            page={5}
             idx={idx + 1}
           />
         ))}

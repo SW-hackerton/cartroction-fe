@@ -17,15 +17,19 @@ export const Container = styled.div`
   } ;
 `;
 
-export const Icon = styled.div`
+export const Icon = styled.img`
   position: absolute;
   width: 162px;
   height: 162px;
 
+  padding: 30px;
+
   top: -142px;
   left: 20px;
 
-  background: #d9d9d9;
+  background-img: url(${props => props.src});
+
+  background: #fcfcfc;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   z-index: 1;
 

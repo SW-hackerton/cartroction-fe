@@ -2,7 +2,9 @@ import { useMemo } from 'react';
 import { useTable } from 'react-table';
 import * as S from './style';
 
-export function InfoBox() {
+export function InfoBox({ state }) {
+  const { img, info } = state;
+
   const COLUMNS = [
     {
       Header: '카테고리',
@@ -10,11 +12,11 @@ export function InfoBox() {
     },
     {
       Header: '정비내역',
-      accessor: 'repair',
+      accessor: 'content',
     },
     {
       Header: '비용',
-      accessor: 'cost',
+      accessor: 'price',
     },
   ];
 
@@ -64,14 +66,14 @@ export function InfoBox() {
   ];
 
   const columns = useMemo(() => COLUMNS, []);
-  const data = useMemo(() => MOCK, []);
+  const data = useMemo(() => info.repairList, []);
   const table = useTable({ columns, data });
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     table;
 
   return (
     <S.Container>
-      <S.Icon />
+      <S.Icon src={img} />
       <S.Header>정비내역</S.Header>
       <S.Wrapper>
         <table {...getTableProps()} frame="void">
