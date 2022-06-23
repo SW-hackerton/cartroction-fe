@@ -1,44 +1,14 @@
-import { TimeLine } from 'components';
 import styled from 'styled-components';
 import Slider from 'react-slick';
-import prev from 'image/icon/prev.svg';
-import next from 'image/icon/next.svg';
-import * as S from './style';
+import { TimeLine } from 'components';
+const Container = styled.div`
+  width: 1000px;
+  height: 500px;
 
-const Button = styled.button`
-  position: absolute;
-  right: 0;
+  margin-left: 100px;
 `;
 
-const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
-  <button
-    {...props}
-    className={
-      'slick-prev slick-arrow' + (currentSlide === 0 ? ' slick-disabled' : '')
-    }
-    aria-hidden="true"
-    aria-disabled={currentSlide === 0 ? true : false}
-    type="button"
-  >
-    <img src={prev} alt="prev" />
-  </button>
-);
-const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
-  <button
-    {...props}
-    className={
-      'slick-next slick-arrow' +
-      (currentSlide === slideCount - 1 ? ' slick-disabled' : '')
-    }
-    aria-hidden="true"
-    aria-disabled={currentSlide === slideCount - 1 ? true : false}
-    type="button"
-  >
-    <img src={next} alt="prev" />
-  </button>
-);
-
-export function TimeLineList() {
+export default function Temp() {
   const temp = [
     {
       registration_form_id: 1,
@@ -101,7 +71,7 @@ export function TimeLineList() {
       car_image_url: '~',
     },
     {
-      registration_form_id: 5,
+      registration_form_id: 4,
       user_id: 1,
       manger_name: 'hello',
       date: '2020-01-04',
@@ -116,7 +86,7 @@ export function TimeLineList() {
       car_image_url: '~',
     },
     {
-      registration_form_id: 6,
+      registration_form_id: 4,
       user_id: 1,
       manger_name: 'hello',
       date: '2020-01-04',
@@ -131,52 +101,7 @@ export function TimeLineList() {
       car_image_url: '~',
     },
     {
-      registration_form_id: 7,
-      user_id: 1,
-      manger_name: 'hello',
-      date: '2020-01-04',
-      repair_list: {
-        카테고리1: '설명1',
-        카테고리2: '설명2',
-        카테고리3: '설명3',
-      },
-      car_number: '1234바 8900',
-      car_distance: '1224km',
-      estimates_image_url: '~',
-      car_image_url: '~',
-    },
-    {
-      registration_form_id: 8,
-      user_id: 1,
-      manger_name: 'hello',
-      date: '2020-01-04',
-      repair_list: {
-        카테고리1: '설명1',
-        카테고리2: '설명2',
-        카테고리3: '설명3',
-      },
-      car_number: '1234바 8900',
-      car_distance: '1224km',
-      estimates_image_url: '~',
-      car_image_url: '~',
-    },
-    {
-      registration_form_id: 9,
-      user_id: 1,
-      manger_name: 'hello',
-      date: '2020-01-04',
-      repair_list: {
-        카테고리1: '설명1',
-        카테고리2: '설명2',
-        카테고리3: '설명3',
-      },
-      car_number: '1234바 8900',
-      car_distance: '1224km',
-      estimates_image_url: '~',
-      car_image_url: '~',
-    },
-    {
-      registration_form_id: 10,
+      registration_form_id: 4,
       user_id: 1,
       manger_name: 'hello',
       date: '2020-01-04',
@@ -191,29 +116,24 @@ export function TimeLineList() {
       car_image_url: '~',
     },
   ];
-
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 5,
-    prevArrow: <SlickArrowLeft />,
-    nextArrow: <SlickArrowRight />,
+    nextArrow: <button style={{ color: 'red' }}>ㅇㄴㄴ</button>,
+    prevArrow: <div style={{ color: 'red' }}>ㅇㄴㅇ</div>,
   };
+
+  const len = temp.length;
   return (
-    <S.Container>
+    <Container>
       <Slider {...settings}>
-        {temp.map((data, idx) => (
-          <TimeLine
-            key={data.registration_form_id}
-            data={data}
-            length={temp.length}
-            page={5}
-            idx={idx + 1}
-          />
+        {temp.map(data => (
+          <TimeLine key={data.registration_form_id} data={data} />
         ))}
       </Slider>
-    </S.Container>
+    </Container>
   );
 }

@@ -2,11 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
-  width: 300px;
-  height: 300px;
-
   display: flex;
-  flex-direction: column;
+
   justify-content: center;
   align-items: center;
   margin-top: 7rem;
@@ -18,18 +15,14 @@ export const Wrapper = styled.div`
 
   justify-content: center;
   align-items: center;
-
-  margin-left: 0.5rem;
 `;
 
 export const Line = styled.div`
   position: absolute;
-
-  top: 32%;
-  left: 60%;
-
-  width: 170px;
-  border: 3px solid #d9d9d9;
+  width: 100px;
+  height: 10px;
+  box-shadow: 0px 5px 20px rgba(174, 174, 192, 0.6);
+  left: 70px;
 `;
 
 export const Image = styled.div`
@@ -38,13 +31,4 @@ export const Image = styled.div`
 
   border-radius: 50%;
   background: #d9d9d9;
-  margin-bottom: 10px;
-`;
-
-export const Text = styled.div`
-  width: 118px;
-  height: 30px;
-  background: #ededed;
-
-  margin-top: 10px;
 `;
