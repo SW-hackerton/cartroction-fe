@@ -5,11 +5,6 @@ import prev from 'image/icon/prev.svg';
 import next from 'image/icon/next.svg';
 import * as S from './style';
 
-const Button = styled.button`
-  position: absolute;
-  right: 0;
-`;
-
 const SlickArrowLeft = ({ currentSlide, slideCount, ...props }) => (
   <button
     {...props}
@@ -203,7 +198,7 @@ export function TimeLineList() {
   };
   return (
     <S.Container>
-      <Slider {...settings}>
+      <Slider {...settings} dotsClass="test-css">
         {temp.map((data, idx) => (
           <TimeLine
             key={data.registration_form_id}
@@ -214,6 +209,8 @@ export function TimeLineList() {
           />
         ))}
       </Slider>
+      <S.CarYear>차 연대기</S.CarYear>
+      <S.Resent>최신이력</S.Resent>
     </S.Container>
   );
 }

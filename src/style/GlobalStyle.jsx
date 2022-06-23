@@ -13,16 +13,35 @@ export const GlobalStyle = createGlobalStyle`
 
     .slick-list {
         display: absolute;
-        width: 700px;
-	  right: -90px;
+        width: 1100px;
+	    right: 145px;
     }
 
     .slick-dots {
         display: absolute;
-        left: 43px;
+        left: 10px;
 
     }
 
+    .slick-next.slick-arrow {
+        position: absolute;
+        right: -150px;
+    }
+
+    .slick-prev.slick-arrow {
+        position: absolute;
+        top: 105px;
+        left: -230px;
+    }
+
+    .slick-next.slick-arrow:before {
+        display: none;
+    }
+
+    li.slick-active button {
+        opacity: .75;
+        color: red;
+    }
 
 
      a {color: #fff; text-decoration: none; outline: none}
@@ -46,5 +65,58 @@ export const GlobalStyle = createGlobalStyle`
         position: absolute;
         white-space: nowrap;
         width: 1px;
+    }
+
+    .test-css {
+        position: absolute;
+        bottom: -40px;
+        left: 380px;
+    }
+
+    .test-css li {
+        display: inline-block;
+    }
+
+    .test-css li button {
+        font-size: 0;
+        width: 15px;
+        height: 15px;
+
+        margin: 0 5px;
+
+        border: 0;
+        outline: 0;
+
+        border-radius: 50%;
+        background: #DBDBE1;
+    }
+
+    .test-css .slick-active button{
+        width: 32px;
+        height: 15px;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        background: #B1B1B8;
+    }
+
+    .test-css li button:before {
+        font-size: 2.7rem;
+        line-height: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        content: '•';
+        border-radius: 50%;
+        text-align: center;
+        opacity: .75;
+        color: #B1B1B8;
+    }
+
+    .test-css li.slick-active button:before {
+        color: #B1B1B8;
     }
 `;
