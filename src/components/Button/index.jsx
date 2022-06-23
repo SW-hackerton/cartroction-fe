@@ -1,5 +1,5 @@
 import * as S from './style';
 
-export function Button({ text, link }) {
-  return <S.Btn to={link}>{text}</S.Btn>;
+export function Button({ children, link }) {
+  return <S.Btn to={link}>{children}</S.Btn>;
 }

@@ -2,17 +2,19 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Btn = styled(Link)`
-  border: 1px solid #ccc;
+  span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  img {
+    width: 10rem;
+    height: 10rem;
+  }
 
-  color: black;
-
-  padding: 2rem 3rem;
-
-  width: 10rem;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 0.5rem;
+  p {
+    font-size: 1.5rem;
+    color: black;
+  }
 `;
