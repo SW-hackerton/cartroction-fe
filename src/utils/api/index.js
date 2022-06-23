@@ -2,10 +2,18 @@ import axios from 'axios';
 
 const BASE_URL = process.env.BASE_URL;
 
+const _axios = axios.create({
+  baseURL: BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  },
+});
+
 export const api = {
   submitForm: ({ data }) => {
     try {
-      const response = axios.post(`${BASE_URL}/manager/register`, data);
+      const response = _axios.post('/api/submitForm', data);
 
       if (response.status !== 200) {
         throw new Error('Error');
@@ -18,7 +26,7 @@ export const api = {
   },
   getResult: ({ param }) => {
     try {
-      const response = axios.get(`${BASE_URL}/${param}`);
+      const response = _axios.get(`/${param}`);
 
       if (response.status !== 200) {
         throw new Error('Error');
