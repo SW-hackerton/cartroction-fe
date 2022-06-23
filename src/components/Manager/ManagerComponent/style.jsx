@@ -253,6 +253,7 @@ export const Input = styled.input`
   border: none;
   border-bottom: 1px solid #e9e9ee;
   text-align: center;
+  background: #fcfcfc;
 `;
 export const InputLabel = styled.label`
   display: flex;
