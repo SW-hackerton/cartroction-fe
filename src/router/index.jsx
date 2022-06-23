@@ -1,4 +1,3 @@
-import Temp from 'pages/temp/inde';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Login, TimeLineList } from 'components';
 import { Main, Manager, User, NotFound, CarResult, Search } from 'pages';
@@ -17,7 +16,6 @@ export default function Router() {
         <Route path="/user" element={<User />} />
         <Route path="/login" element={<Login />} />
         <Route path="/welcome" element={<Welcome />} />
-        <Route path="/good" element={<Temp />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
