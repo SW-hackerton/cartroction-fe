@@ -1,1 +1,1 @@
-export { log } from 'utils/console';
+export { api } from 'utils/api';

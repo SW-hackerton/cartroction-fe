@@ -17,9 +17,6 @@ export { ManagerComponent } from 'components/Manager/ManagerComponent';
 
 // UserResult
 export { CarResultArea } from 'components/CarResult/CarResultArea';
-export { ImageBox } from 'components/CarResult/ImageBox';
-export { ImageList } from 'components/CarResult/ImageList';
-export { InfoBox } from 'components/CarResult/InfoBox';
 
 // Manager
 // export { UserComponent } from 'components/User/UserComponent';

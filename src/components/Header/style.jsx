@@ -6,6 +6,7 @@ const getContentHeight = (height = contentHeight) => `height: ${height}px`;
 const getContentMargin = (margin = 10) => `margin: auto ${margin}px auto 0`;
 
 export const Container = styled.div`
+  z-index: 1;
   position: fixed;
   top: 0;
   left: 0;
