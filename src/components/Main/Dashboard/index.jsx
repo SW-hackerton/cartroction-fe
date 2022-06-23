@@ -5,7 +5,7 @@ import { api } from 'utils/api';
 import * as S from './style';
 
 export function Dashboard(props) {
-  const { search } = useOutletContext();
+  const { search, datas } = useOutletContext();
   const [data, setData] = useState('');
 
   const mobileSize = 768;
@@ -200,7 +200,7 @@ export function Dashboard(props) {
           isMobile ? mobileContentCnt : rowContentCnt,
         )}
       </S.Wrapper>
-      <TimeLineList />
+      <TimeLineList info={datas} />
     </S.Container>
   );
 }

@@ -1,8 +1,8 @@
 import * as S from './style';
 
-export function TimeLine({ data, page, idx, length }) {
+export function TimeLine({ data, onClick, page, idx, length }) {
   return (
-    <S.Container>
+    <S.Container onClick={onClick}>
       <S.Image>
         <img src={data.src} alt={data.name} />
         <p>{data.name}</p>

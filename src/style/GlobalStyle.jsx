@@ -104,4 +104,22 @@ export const GlobalStyle = createGlobalStyle`
     .test-css li.slick-active button:before {
         color: #B1B1B8;
     }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    td, th {
+        border-top: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+    }
+    td:not(:last-child), th:not(:last-child) {
+        border-right: 1px solid #dddddd;
+    }
+    th {
+        font-weight: bold;
+    }
 `;

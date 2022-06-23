@@ -1,5 +1,6 @@
 import { TimeLine } from 'components';
 import { useOutletContext } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import prev from 'image/icon/prev.svg';
 import next from 'image/icon/next.svg';
@@ -40,38 +41,44 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   </button>
 );
 
-export function TimeLineList() {
+export function TimeLineList({ info }) {
   // const [data] = useOutletContext();
 
   const datas = [
-    { id: 1, src: tire, name: '타이어 교체' },
-    { id: 2, src: inspection, name: '차량 점검' },
+    { id: 0, src: tire, name: '타이어 교체' },
+    { id: 1, src: inspection, name: '차량 점검' },
     {
-      id: 3,
+      id: 2,
       src: crash,
       name: '사고 수리',
     },
     {
-      id: 4,
+      id: 3,
       src: normal,
       name: '일반 수리',
     },
     {
-      id: 5,
+      id: 4,
       src: enginOil,
       name: '엔진 오일 교체',
     },
     {
-      id: 6,
+      id: 5,
       src: etcOil,
       name: '기타 오일 교체',
     },
     {
-      id: 7,
+      id: 6,
       src: ect,
       name: '기타',
     },
   ];
+
+  const navigate = useNavigate();
+
+  const onClick = id => {
+    navigate('/result', { state: { info: info[id], img: datas[id].src } });
+  };
 
   const settings = {
     dots: true,
@@ -87,7 +94,8 @@ export function TimeLineList() {
       <Slider {...settings} dotsClass="test-css">
         {datas.map((data, idx) => (
           <TimeLine
-            key={data.registration_form_id}
+            key={data.id}
+            onClick={() => onClick(data.id)}
             data={data}
             length={data.length}
             page={5}
