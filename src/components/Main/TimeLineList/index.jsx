@@ -1,5 +1,5 @@
 import { TimeLine } from 'components';
-import styled from 'styled-components';
+import { useOutletContext } from 'react-router-dom';
 import Slider from 'react-slick';
 import prev from 'image/icon/prev.svg';
 import next from 'image/icon/next.svg';
@@ -33,13 +33,21 @@ const SlickArrowRight = ({ currentSlide, slideCount, ...props }) => (
   </button>
 );
 
-export function TimeLineList({ data }) {
+export function TimeLineList() {
+  const [data] = useOutletContext();
+
+  const slidesToShow = data.length < 5 ? data.length : 5;
+  const slidesToScroll = data.length < 5 ? 1 : 5;
+
+  console.log(slidesToShow);
+  console.log(slidesToScroll);
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 5,
+    slidesToShow,
+    slidesToScroll,
     prevArrow: <SlickArrowLeft />,
     nextArrow: <SlickArrowRight />,
   };

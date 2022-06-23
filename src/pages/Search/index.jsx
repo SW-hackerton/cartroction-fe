@@ -1,4 +1,5 @@
-import { Outlet } from 'react-router-dom';
+import { useState } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
 import { NavTemplate } from 'components';
 import * as S from './style';
 
@@ -156,16 +157,31 @@ const data = [
 ];
 
 export function Search() {
+  const [input, setInput] = useState('');
+  const navigation = useNavigate();
+
+  const onKeyPress = e => {
+    if (e.key === 'Enter') {
+      navigation('/search/result');
+      return;
+    }
+
+    setInput(e.target.value);
+  };
+
   return (
     <NavTemplate isSearchBar={false}>
       <S.Container>
         <S.Wrapper>
           <S.SearchBoxWrap>
-            <S.SearchBox placeholder="차량번호를 검색해주세요." />
+            <S.SearchBox
+              placeholder="차량번호를 검색해주세요."
+              onKeyPress={onKeyPress}
+            />
             <S.SearchBox__icon></S.SearchBox__icon>
           </S.SearchBoxWrap>
           <S.SubText>해당 차량의 연대기 입니다.</S.SubText>
-          <Outlet data={data} />
+          <Outlet context={[data]} />
         </S.Wrapper>
       </S.Container>
     </NavTemplate>
