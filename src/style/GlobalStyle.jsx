@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
     body {
-        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'NanumSquare', sans-serif !important;
         height: 100%;
     }
 
@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-box-shadow: 0 0 0 30px white inset;
     }
     input, textarea, button {
-        font-family: 'Noto Sans KR', sans-serif;
+        font-family: 'NanumSquare', sans-serif !important;
     }
     .visually-hidden {
         clip: rect(0 0 0 0);
