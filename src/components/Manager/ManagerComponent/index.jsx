@@ -16,7 +16,11 @@ export function ManagerComponent() {
     '기타',
   ];
   const imgInput = useRef();
-  const [estimateData, setEstimateData] = useState({});
+  const [estimateData, setEstimateData] = useState({
+    carNumber: '22이2222',
+    manager: '해커',
+    carDistance: '10000',
+  });
   const [repairList, setRepairList] = useState([
     {
       category: 0,
@@ -107,7 +111,7 @@ export function ManagerComponent() {
       id: 0,
       managerName: manager,
       repairList: repairList.map(repair => ({
-        id: null,
+        id: 0,
         category: selectCategory[Number(repair.category)],
         content: repair.content,
         price: repair.price,

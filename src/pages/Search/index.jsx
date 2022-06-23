@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import { NavTemplate } from 'components';
 import * as S from './style';
+import { api } from 'utils/api';
 
-const data = [
+const mock_data = [
   {
     registration_form_id: 1,
     user_id: 1,
@@ -158,15 +159,17 @@ const data = [
 
 export function Search() {
   const [input, setInput] = useState('');
+  const [data, setData] = useState('adf');
   const navigation = useNavigate();
 
-  const onKeyPress = e => {
+  const onKeyPress = async e => {
     if (e.key === 'Enter') {
+      setInput(e.target.value);
+      setData(await api.getResult({ param: e.target.value }));
+      console.log(data);
       navigation('/search/result');
       return;
     }
-
-    setInput(e.target.value);
   };
 
   return (
@@ -181,7 +184,7 @@ export function Search() {
             <S.SearchBox__icon></S.SearchBox__icon>
           </S.SearchBoxWrap>
           {/* <S.SubText>해당 차량의 연대기 입니다.</S.SubText> */}
-          <Outlet context={[data]} />
+          <Outlet context={{search: input}} />
         </S.Wrapper>
       </S.Container>
     </NavTemplate>
