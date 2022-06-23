@@ -2,11 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
-  min-width: 320px;
-  width: 50%;
+  max-width: 1000px;
+  width: fit-content;
 
   display: flex;
-  justify-content: space-evenly;
+
+  /* justify-content: space-evenly; */
+  align-items: center;
 
   & .time {
     margin-bottom: 0.5rem;
@@ -20,12 +22,4 @@ export const Container = styled.div`
   }
 
   overflow: auto;
-`;
-
-export const Connection = styled.div`
-  width: 100%;
-  position: absolute;
-
-  top: 155px;
-  border: 3px solid #d9d9d9;
 `;

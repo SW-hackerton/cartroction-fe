@@ -111,10 +111,14 @@ export function TimeLineList() {
   ];
   return (
     <S.Container>
-      {temp.map(data => (
-        <TimeLine key={data.registration_form_id} data={data} />
+      {temp.map((data, idx) => (
+        <TimeLine
+          key={data.registration_form_id}
+          data={data}
+          length={temp.length}
+          idx={idx}
+        />
       ))}
-      <S.Connection length={temp.lenght} />
     </S.Container>
   );
 }
