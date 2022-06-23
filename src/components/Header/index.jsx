@@ -4,8 +4,6 @@ import * as S from './style';
 export function Header({ isSearchBar = false, userType }) {
   const { type } = useSelector(state => state.userType);
 
-  console.log(type);
-
   const getUserContent = () => {
     // type 1 = 정비사
     if (userType)

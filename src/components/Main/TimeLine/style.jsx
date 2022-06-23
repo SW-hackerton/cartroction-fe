@@ -19,15 +19,16 @@ export const Wrapper = styled.div`
 
 export const Line = styled.div`
   position: absolute;
-  width: 200px;
+  width: ${props => props.length * 100}px;
+  /* width: 200px; */
   height: 10px;
   box-shadow: 0px 5px 20px rgba(174, 174, 192, 0.6);
-  left: 70px;
+  left: 263px;
 `;
 
 export const Image = styled.div`
-  width: 160px;
-  height: 160px;
+  width: 130px;
+  height: 130px;
   z-index: 1;
 
   border-radius: 50%;
