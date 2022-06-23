@@ -1,7 +1,9 @@
 import styled from 'styled-components';
+import icon from 'image/icon/add_btn.svg';
+import iconAdd from 'image/icon/add_btn_color.svg';
 
 const responseSize = 768;
-
+const responseSmallSize = 368;
 const headerHeight = 50;
 
 export const Container = styled.div`
@@ -23,10 +25,15 @@ export const Wrapper = styled.div`
 `;
 
 export const InputWrapper = styled.div`
+  position: relative;
   display: flex;
-  width: 50%;
+  width: 55%;
   height: 100%;
   flex-direction: column;
+  background: #FCFCFC;
+  box-shadow: 0px 5px 20px rgba(174, 174, 192, 0.6);
+  border-radius: 20px;
+  overflow: auto;
 
   @media (max-width: ${responseSize}px) {
     width: 90%;
@@ -34,32 +41,80 @@ export const InputWrapper = styled.div`
   }
 `;
 
-export const EstimateImg = styled.div`
+export const EstimateBox = styled.div`
   display: flex;
-  width: 45%;
-  max-height: 700px;
+  position: relative;
+  width: 40%;
   height: 100%;
-  background: #d9d9d9;
 
   @media (max-width: ${responseSize}px) {
     width: 90%;
-    max-height: 30%;
+    max-height: 50%;
     margin: auto;
     margin-bottom: 30px;
   }
+`;
+export const Img = styled.img`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 5px 20px rgba(174, 174, 192, 0.6);
+  border-radius: 20px;
+  object-fit: cover;
+
+  @media (max-width: ${responseSize}px) {
+    max-height: 100%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+`;
+export const EstimateImg = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  background: #F0F0F3;
+  box-shadow: 0px 5px 20px rgba(174, 174, 192, 0.6);
+  border-radius: 20px;
+
+  @media (max-width: ${responseSize}px) {
+    max-height: 100%;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+`;
+export const EstimateIcon = styled.div`
+  position: absolute;
+  display: flex;
+  width: 7.5vw;
+  height: 7.5vw;
+  left: calc(50% - 3.75vw);
+  top: calc(50% - 7.75vw);
+  background: url(${icon});
+  background-size: contain;
+  background-repeat : no-repeat;
+`;
+export const EstimateLabel = styled.label`
+  position: absolute;
+  display: flex;
+  width: 100%;
+  top: 50%;
+  justify-content: center;
+  margin: auto;
+  color: #BBBBC1;
+  
 `;
 
 export const InputBox = styled.div`
   display: flex;
   flex-direction: column;
-  background: #f4f4f4;
   padding-bottom: 20px;
   margin-bottom: 20px;
 `;
 
 export const Content = styled.div`
   display: flex;
-  margin: 20px;
+  margin: 10px 20px;
   margin-bottom: 0;
 `;
 export const Label = styled.label`
@@ -67,40 +122,108 @@ export const Label = styled.label`
   min-width: 100px;
   width: 25%;
   line-height: 25px;
-`;
-export const Input = styled.input`
-  display: flex;
-  width: 100%;
-  height: 25px;
-  border: 0;
-  border-bottom: 1px solid #c4c4c4;
-  background: #f4f4f4;
-  
-  &:focus {
-    outline: none;
-  }
+  font-weight: bold;
 `;
 
 export const TableRowBox = styled.div`
+  width: 90%;
   display: flex;
   height: 25px;
-  margin: 20px;
+  margin: 0 auto;
   margin-bottom: 0;
-  background: #d9d9d9;
   justify-content: space-between;
+  flex-basis: {20%, 50%, 30%};
+  background: ${props => props.isHead && `linear-gradient(270.15deg, #0087FF 4.66%, #00C3FF 100.81%)`};
+  color: ${props => props.isHead && '#ffffff'};
+  font-weight: ${props => props.isHead && 'bold'};
 `;
 
 export const TableRow = styled.label`
   line-height: 25px;
   width: 100%;
-  text-align: center;
+  padding-left: 5px;
+`;
+
+export const TableRowInput = styled.input`
+  border: none;
+  outline: none;
+  background: #FCFCFC;
+
+  line-height: 25px;
+  width: 100%;
+  padding-left: 5px;
+
+  & + & {
+    border-left: 1px solid #E9E9EE;
+  }
 `;
 
 export const TableAdd = styled.div`
+  background: url(${iconAdd});
+  background-size: contain;
+  background-repeat : no-repeat;
+
   height: 20px;
   width: 20px;
-  text-align: center;
+  padding-left: 5px;
   border-radius: 100%;
-  background: #f4f4f4;
   margin: auto;
 `;
+
+export const Line = styled.div`
+  display: flex;
+  margin: 3px auto;
+  background: #E9E9EE;
+  width: 90%;
+  left: 5%;
+  height: 1px;
+`;
+
+export const FullLine = styled.div`
+  display: flex;
+  margin: 3px auto;
+  background: #E9E9EE;
+  width: 100%;
+  left: 5%;
+  height: 1px;
+`;
+
+export const SelectCategory = styled.select`
+  border: none;
+  background: #FCFCFC;
+  outline: none;
+`;
+
+export const EstimateDataBox = styled.div`
+  display: flex;
+  margin: 20px;
+  margin-top: 23px;
+  justify-content: flex-end;
+`;
+export const InputForm = styled.div`
+  display: flex;
+  line-height: 15px;
+  margin-left: 4px;
+  
+  @media (max-width: ${responseSmallSize}px) {
+    flex-direction: column;
+  }
+`;
+export const Input = styled.input`
+  display: flex;
+  height: 15px;
+  width: 65px;
+  outline: none; 
+  font-size: 11px;
+  border: none;
+  border-bottom: 1px solid #E9E9EE;
+  text-align: center;
+`;
+export const InputLabel = styled.label`
+  display: flex;
+  line-height: 15px;
+  font-size: 11px;
+  font-weight: bold;
+`;
+
+export const FileInput = styled.input``;

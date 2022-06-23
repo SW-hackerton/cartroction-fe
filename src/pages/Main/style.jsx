@@ -3,6 +3,8 @@ import background from 'image/home2.png';
 import icon from 'image/icon/arrow_white.svg';
 import { Link } from 'react-router-dom';
 
+const responseSmallSize = 600;
+const responseMedianSize = 1000;
 const responseBigSize = 1400;
 
 export const Container = styled.div`
@@ -65,13 +67,26 @@ export const GoBtn = styled(Link)`
   &:after {
     content: '';
     display: flex;
-    width: 14px;
-    height: 22px;
+    width: 1.5vw;
+    height: 1.5vw;
     background: url(${icon});
     background-size: contain;
     background-repeat : no-repeat;
     margin: auto 0;
     margin-left: 3vw;
     margin-right: -1vw;
+  }
+
+  @media (max-width: ${responseSmallSize}px) {
+    width: 120px;
+  }
+  @media (max-width: ${responseMedianSize}px) {
+    width: 150px;
+    line-height: 26px;
+    font-size: 8px;
+    &:after {
+      width: 10px;
+      height: 10px;
+    }
   }
 `;
