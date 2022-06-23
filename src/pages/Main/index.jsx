@@ -1,13 +1,16 @@
-import { MainArea } from 'components';
+import { TimeLineList, NavTemplate } from 'components';
 import * as S from './style';
 
 export function Main() {
   return (
-    <S.Container>
-      <S.Wrapper>
-        <S.WireSearchBox />
-        <S.WireSearchBox__icon />
-      </S.Wrapper>
-    </S.Container>
+    <NavTemplate isSearchBar={false}>
+      <S.Container>
+        <S.Wrapper>
+          <S.WireSearchBox />
+          <S.WireSearchBox__icon />
+        </S.Wrapper>
+        <TimeLineList />
+      </S.Container>
+    </NavTemplate>
   );
 }

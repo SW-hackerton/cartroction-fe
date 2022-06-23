@@ -1,10 +1,12 @@
-import { ManagerComponent } from 'components';
+import { ManagerComponent, NavTemplate } from 'components';
 import * as S from './style';
 
 export function Manager() {
   return (
-    <S.Container>
-      <ManagerComponent />
-    </S.Container>
+    <NavTemplate isSearchBar={false}>
+      <S.Container>
+        <ManagerComponent />
+      </S.Container>
+    </NavTemplate>
   );
 }

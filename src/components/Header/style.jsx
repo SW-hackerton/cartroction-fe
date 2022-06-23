@@ -6,8 +6,11 @@ const getContentHeight = (height = contentHeight) => `height: ${height}px`;
 const getContentMargin = (margin = 10) => `margin: auto ${margin}px auto 0`;
 
 export const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 50px;
   justify-content: center;
   background: #e4e4e4;

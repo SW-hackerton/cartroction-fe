@@ -5,8 +5,14 @@ const searchIconSize = 30;
 
 export const Container = styled.div`
   display: flex;
-  width: 100vw;
-  height: calc(100vh - ${headerHeight}px);
+  width: 100%;
+
+  height: 100%;
+
+  background: #ededed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   justify-content: center;
 `;
 
@@ -16,7 +22,6 @@ export const Wrapper = styled.div`
   width: 50%;
   height: 50px;
   position: relative;
-  margin: auto;
 `;
 
 export const WireSearchBox = styled.input`

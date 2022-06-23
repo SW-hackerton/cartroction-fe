@@ -1,8 +1,12 @@
 // common
-export { Layout } from 'components/Layout';
 export { Footer } from 'components/Footer';
 export { Header } from 'components/Header';
 export { Button } from 'components/Button';
+export { NavTemplate } from 'components/NavTemplate';
+
+// Main
+export { TimeLine } from 'components/Main/TimeLine';
+export { TimeLineList } from 'components/Main/TimeLineList';
 
 //Login
 export { Login } from 'components/Login/Login';
@@ -18,4 +22,4 @@ export { ImageList } from 'components/CarResult/ImageList';
 export { InfoBox } from 'components/CarResult/InfoBox';
 
 // Manager
-export { UserComponent } from 'components/User/UserComponent';
+// export { UserComponent } from 'components/User/UserComponent';

@@ -11,13 +11,6 @@ export const GlobalStyle = createGlobalStyle`
         height: 100%;
     }
 
-    #root {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-    }
-
 
      a {color: #fff; text-decoration: none; outline: none}
      a:hover, a:active {text-decoration: none; background-color: transparent;}

@@ -1,29 +1,35 @@
+import { useSelector } from 'react-redux';
 import * as S from './style';
 
-export function Header({ showSearchBar, hidden, userType }) {
+export function Header({ isSearchBar, userType = 1 }) {
+  const { type } = useSelector(state => state.userType);
+
+  console.log(type);
+
   const getUserContent = () => {
     // type 1 = 정비사
-    if (userType) return (
-      <S.UserInfoWrapper>
-        <S.WireText>~~ 정비소 !~! 정비사님</S.WireText>
-      </S.UserInfoWrapper>
-    )
+    if (userType)
+      return (
+        <S.UserInfoWrapper>
+          <S.WireText>~~ 정비소 !~! 정비사님</S.WireText>
+        </S.UserInfoWrapper>
+      );
     // type 0 = 일반 사용자
-    else return (
-      <S.UserInfoWrapper>
-        <S.WireBox></S.WireBox>
-        <S.UserBox></S.UserBox>
-      </S.UserInfoWrapper>
-    )
-  }
+    else
+      return (
+        <S.UserInfoWrapper>
+          <S.WireBox></S.WireBox>
+          <S.UserBox></S.UserBox>
+        </S.UserInfoWrapper>
+      );
+  };
 
-  if (hidden) return;
   return (
     <S.Container>
       <S.Wrapper>
         <S.SearchBarWrapper>
           <S.WireBox></S.WireBox>
-          {!showSearchBar && (<S.WireSearchBox></S.WireSearchBox>)}
+          {!isSearchBar && <S.WireSearchBox></S.WireSearchBox>}
         </S.SearchBarWrapper>
         {getUserContent()}
       </S.Wrapper>

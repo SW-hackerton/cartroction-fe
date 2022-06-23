@@ -1,10 +1,12 @@
-import { CarResultArea } from 'components';
+import { CarResultArea, NavTemplate } from 'components';
 import * as S from './style';
 
 export function CarResult() {
   return (
     <S.Container>
-      <CarResultArea />
+      <NavTemplate isSearchBar={false}>
+        <CarResultArea />
+      </NavTemplate>
     </S.Container>
   );
 }
