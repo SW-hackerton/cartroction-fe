@@ -3,7 +3,7 @@ import axios from 'axios';
 const BASE_URL = process.env.BASE_URL;
 
 const _axios = axios.create({
-  baseURL: BASE_URL,
+  baseURL: 'http://49.50.162.187:8080/manager/register2',
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
@@ -13,7 +13,10 @@ const _axios = axios.create({
 export const api = {
   submitForm: ({ data }) => {
     try {
-      const response = _axios.post('/api/submitForm', data);
+      const response = axios.post(
+        'http://49.50.162.187:8080/manager/register2',
+        data,
+      );
 
       if (response.status !== 200) {
         throw new Error('Error');
