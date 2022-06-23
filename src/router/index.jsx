@@ -3,6 +3,7 @@ import { Login } from 'components';
 import { Main, Manager, User, NotFound } from 'pages';
 import { UserRoute } from 'components/User/UserRoute';
 import { Welcome } from 'components/Login/Welcome';
+import { ManageRoute } from 'components/Manager/ManagerRoute';
 
 export default function Router() {
   return (
@@ -14,7 +15,7 @@ export default function Router() {
         />
         <Route
           path="/manager"
-          element={<UserRoute element={Manager} showSearchBar={false} />}
+          element={<ManageRoute element={Manager} showSearchBar={false} />}
         />
         <Route
           path="/user"
