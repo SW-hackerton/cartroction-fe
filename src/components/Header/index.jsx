@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import * as S from './style';
 
-export function Header({ isSearchBar, userType = 1 }) {
+export function Header({ isSearchBar = false, userType }) {
   const { type } = useSelector(state => state.userType);
 
   console.log(type);
@@ -18,7 +18,6 @@ export function Header({ isSearchBar, userType = 1 }) {
     else
       return (
         <S.UserInfoWrapper>
-          <S.WireBox></S.WireBox>
           <S.UserBox></S.UserBox>
         </S.UserInfoWrapper>
       );
@@ -28,8 +27,8 @@ export function Header({ isSearchBar, userType = 1 }) {
     <S.Container>
       <S.Wrapper>
         <S.SearchBarWrapper>
-          <S.WireBox></S.WireBox>
-          {!isSearchBar && <S.WireSearchBox></S.WireSearchBox>}
+          <S.LogoBox></S.LogoBox>
+          {isSearchBar && <S.WireSearchBox></S.WireSearchBox>}
         </S.SearchBarWrapper>
         {getUserContent()}
       </S.Wrapper>

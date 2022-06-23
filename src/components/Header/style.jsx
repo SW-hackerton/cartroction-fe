@@ -1,19 +1,23 @@
 import styled from 'styled-components';
+import logo from 'image/icon/car_logo.svg';
+import user from 'image/icon/user.svg';
 
 const responseSize = 768;
-const contentHeight = 30;
-const getContentHeight = (height = contentHeight) => `height: ${height}px`;
+const contentSize = 30;
+const getContentHeight = (height = contentSize) => `height: ${height}px`;
 const getContentMargin = (margin = 10) => `margin: auto ${margin}px auto 0`;
 
 export const Container = styled.div`
-  position: fixed;
+  position: relative;
+  z-index: 100;
   top: 0;
   left: 0;
   display: flex;
   width: 100%;
   height: 50px;
   justify-content: center;
-  background: #e4e4e4;
+  background: #ffffff;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 `;
 
 export const Wrapper = styled.div`
@@ -34,22 +38,26 @@ export const UserInfoWrapper = styled.div`
   display: flex;
   margin-left: auto;
   width: 50%;
+  justify-content: right;
 `;
 
-export const WireBox = styled.div`
-  min-width: 50px;
-  width: 10%;
+export const LogoBox = styled.div`
+  min-width: 150px;
+  width: 20%;
   ${getContentHeight()};
   ${getContentMargin()};
-  background: #c4c4c4;
+  background: url(${logo});
+  background-size: contain;
+  background-repeat : no-repeat;
 `;
 
 export const UserBox = styled.div`
-  min-width: 50px;
-  width: 10%;
+  width: ${contentSize}px;
   ${getContentHeight()};
   margin: auto 0;
-  background: #c4c4c4;
+  background: url(${user});
+  background-size: contain;
+  background-repeat : no-repeat;
 `;
 
 export const WireSearchBox = styled.div`
@@ -66,7 +74,7 @@ export const WireSearchBox = styled.div`
     width: 25px;
     height: 25px;
     background: #a4a4a4;
-    margin-top: calc(calc(${contentHeight}px - 25px) / 2);
+    margin-top: calc(calc(${contentSize}px - 25px) / 2);
     margin-left: 5px;
     border-radius: 20px;
   }
