@@ -10,14 +10,14 @@ export function Header({ isSearchBar = false, userType }) {
     // type 1 = 정비사
     if (userType)
       return (
-        <S.UserInfoWrapper>
+        <S.UserInfoWrapper to={'/login'}>
           <S.WireText>~~ 정비소 !~! 정비사님</S.WireText>
         </S.UserInfoWrapper>
       );
     // type 0 = 일반 사용자
     else
       return (
-        <S.UserInfoWrapper>
+        <S.UserInfoWrapper to={'/login'}>
           <S.UserBox></S.UserBox>
         </S.UserInfoWrapper>
       );
@@ -27,7 +27,7 @@ export function Header({ isSearchBar = false, userType }) {
     <S.Container>
       <S.Wrapper>
         <S.SearchBarWrapper>
-          <S.LogoBox></S.LogoBox>
+          <S.LogoBox to={'/'}></S.LogoBox>
           {isSearchBar && <S.WireSearchBox></S.WireSearchBox>}
         </S.SearchBarWrapper>
         {getUserContent()}

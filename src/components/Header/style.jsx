@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import logo from 'image/icon/car_logo.svg';
 import user from 'image/icon/user.svg';
+import { Link } from 'react-router-dom';
 
 const responseSize = 768;
 const contentSize = 30;
@@ -34,14 +35,14 @@ export const SearchBarWrapper = styled.div`
   width: 60%;
 `;
 
-export const UserInfoWrapper = styled.div`
+export const UserInfoWrapper = styled(Link)`
   display: flex;
   margin-left: auto;
   width: 50%;
   justify-content: right;
 `;
 
-export const LogoBox = styled.div`
+export const LogoBox = styled(Link)`
   min-width: 150px;
   width: 20%;
   ${getContentHeight()};

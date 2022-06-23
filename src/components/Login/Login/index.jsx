@@ -7,8 +7,8 @@ export function Login() {
   const dispatch = useDispatch();
 
   const onClick = ({ target }) => {
-    if (target.text === '정비사') dispatch(setUserType('정비사'));
-    if (target.text === '차량 구매') dispatch(setUserType('구매자'));
+    if (target.text === '정비사') dispatch(setUserType(1));
+    if (target.text === '차량 구매') dispatch(setUserType(0));
   };
   return (
     <S.Container onClick={onClick}>

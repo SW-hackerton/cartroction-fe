@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import user from 'image/icon/user_white.svg';
 import background from 'image/home3.png';
+import { Link } from 'react-router-dom';
 
 const responseSize = 768;
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   display: flex;
   width: 100%;
   height: 100%;
